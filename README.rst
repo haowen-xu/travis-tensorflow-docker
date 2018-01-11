@@ -57,8 +57,11 @@ An example `.travis.yml`::
       - docker run
           -v "$(pwd)":"$(pwd)"
           -w "$(pwd)"
+          -e TRAVIS="${TRAVIS}"
+          -e TRAVIS_JOB_ID="${TRAVIS_JOB_ID}"
+          -e TRAVIS_BRANCH="${TRAVIS_BRANCH}"
           "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION}tf${TENSORFLOW_VERSION}"
-          bash -c "pip install -r requirements.txt && python -m unittest"
+          bash -c "pip install -r requirements.txt && coverage run -m py.test && coveralls"
 
 Development
 -----------
