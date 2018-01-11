@@ -29,5 +29,5 @@ Installation
     docker build \
         --build-arg UBUNTU_MIRROR=archive.ubuntu.com \
         --build-arg CACHEBUST="$(date +%s)" \
-        -t ipwx/travis-tensorflow:py35tf141 \
+        -t ipwx/travis-tensorflow-docker:py35tf141 \
         py35tf141
