@@ -21,6 +21,5 @@ install:
 script:
 - docker run -v "$(pwd)":"$(pwd)" -w "$(pwd)" -e PYTHON_VERSION="${PYTHON_VERSION}"
   -e TENSORFLOW_VERSION="${TENSORFLOW_VERSION}" "${REPO}:${TAG}" python tests.py
-after_success:
 - docker login -u "${DOCKER_USER}" -p "${DOCKER_PASS}"
 - docker push "${REPO}:${TAG}"
