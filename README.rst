@@ -1,6 +1,9 @@
 Docker Images for Running Tests with TensorFlow on Travis CI
 ============================================================
 
+.. image:: https://travis-ci.org/korepwx/travis-tensorflow-docker.svg?branch=master
+    :target: https://travis-ci.org/korepwx/travis-tensorflow-docker
+
 This is a Ubuntu 16.04 Docker image for running tests with various versions of Python and TensorFlow on `Travis CI <travis-ci.org>`_.
 
 +----------+--------+------------+
