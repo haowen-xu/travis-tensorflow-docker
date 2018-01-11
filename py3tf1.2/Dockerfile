@@ -31,8 +31,8 @@ RUN sed -i "s/archive.ubuntu.com/${UBUNTU_MIRROR}/g" /etc/apt/sources.list && \
     conda config --set always_yes yes --set changeps1 no && \
     conda update --yes -q conda && \
     conda info -a && \
-    conda install --yes -q python=3.5 && \
-    python -m pip install --upgrade numpy six coverage mock pytest sphinx matplotlib ipython[all] "coveralls>=1.1" && \
-    python -m pip install tensorflow==1.4.1
+    conda install --yes -q python=3.6 && \
+    python -m pip install --upgrade numpy six coverage mock pytest sphinx matplotlib pillow ipython[all] "coveralls>=1.1" && \
+    python -m pip install tensorflow==1.2.1
 
 CMD ["/bin/bash"]

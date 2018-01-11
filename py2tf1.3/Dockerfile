@@ -32,7 +32,7 @@ RUN sed -i "s/archive.ubuntu.com/${UBUNTU_MIRROR}/g" /etc/apt/sources.list && \
     conda update --yes -q conda && \
     conda info -a && \
     conda install --yes -q python=2.7 && \
-    python -m pip install --upgrade numpy six coverage mock pytest sphinx matplotlib ipython[all] "coveralls>=1.1" && \
-    python -m pip install tensorflow==1.5.0rc0
+    python -m pip install --upgrade numpy six coverage mock pytest sphinx matplotlib pillow ipython[all] "coveralls>=1.1" && \
+    python -m pip install tensorflow==1.3.0
 
 CMD ["/bin/bash"]

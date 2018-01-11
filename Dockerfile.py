@@ -10,15 +10,14 @@ env = Environment(loader=FileSystemLoader(source_root))
 template = env.get_template('Dockerfile.template')
 
 python_versions = [
-    ('py27', '2.7'),
-    ('py35', '3.5'),
-    ('py36', '3.6'),
+    ('py2', '2.7'),
+    ('py3', '3.6'),
 ]
 tensorflow_versions = [
-    ('tf121', '1.2.1'),
-    ('tf130', '1.3.0'),
-    ('tf141', '1.4.1'),
-    ('tf150rc0', '1.5.0rc0'),
+    ('tf1.2', '1.2.1'),
+    ('tf1.3', '1.3.0'),
+    ('tf1.4', '1.4.1'),
+    ('tf1.5', '1.5.0-rc0'),
 ]
 
 valid_names = set()
@@ -32,7 +31,7 @@ for pytag, pyver in python_versions:
         with codecs.open(os.path.join(dir_name, 'Dockerfile'), 'wb', 'utf-8') as f:
             cnt = template.render(
                 python_version=pyver,
-                tensorflow_version=tfver
+                tensorflow_version=tfver.replace('-', '')
             )
             f.write(cnt + '\n')
 
