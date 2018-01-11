@@ -14,10 +14,10 @@ env:
 install:
   - docker build -t "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}" py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}
 script:
-  - docker run \
-      -v "$(pwd)":"$(pwd)" \
-      -w "$(pwd)" \
-      -e PYTHON_VERSION="${PYTHON_VERSION}" \
-      -e TENSORFLOW_VERSION="${TENSORFLOW_VERSION}" \
-      "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}" \
+  - docker run
+      -v "$(pwd)":"$(pwd)"
+      -w "$(pwd)"
+      -e PYTHON_VERSION="${PYTHON_VERSION}"
+      -e TENSORFLOW_VERSION="${TENSORFLOW_VERSION}"
+      "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}"
       python tests.py

@@ -4,7 +4,7 @@ Docker Images for Running Tests with TensorFlow on Travis CI
 .. image:: https://travis-ci.org/korepwx/travis-tensorflow-docker.svg?branch=master
     :target: https://travis-ci.org/korepwx/travis-tensorflow-docker
 
-This is a Ubuntu 16.04 Docker image for running tests with various versions of Python and TensorFlow on `Travis CI <travis-ci.org>`_.
+This is a Ubuntu 16.04 Docker image for running tests with various versions of Python and TensorFlow on `Travis CI <https://travis-ci.org>`_.
 
 +----------+--------+------------+
 | Tag      | Python | TensorFlow |
@@ -33,6 +33,35 @@ Packages
 * Apt: build-essential, wget, git
 * Python: numpy, six, coverage, mock, pytest, sphinx, matplotlib, pillow, ipython[all]
 
+Usage
+-----
+
+An example `.travis.yml`::
+
+    sudo: required
+    services:
+      - docker
+    env:
+      matrix:
+      - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.2.1
+      - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.3.0
+      - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.4.1
+      - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.5.0-rc0
+      - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.2.1
+      - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.3.0
+      - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.4.1
+      - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.5.0-rc0
+    install:
+      - docker pull "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}"
+    script:
+      - docker run
+          -v "$(pwd)":"$(pwd)"
+          -w "$(pwd)"
+          -e PYTHON_VERSION="${PYTHON_VERSION}"
+          -e TENSORFLOW_VERSION="${TENSORFLOW_VERSION}"
+          "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}"
+          bash -c "pip install -r requirements.txt && python -m unittest"
+
 Development
 -----------
 
@@ -41,8 +70,8 @@ To populate the Dockerfiles, execute the following command::
     pip install jinja2
     python Dockerfile.py
 
-Installation
-------------
+Local Build
+-----------
 
 ::
 
