@@ -1,6 +1,6 @@
 sudo: required
 services:
-  - docker
+- docker
 env:
   matrix:
   - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.2.1
@@ -11,13 +11,21 @@ env:
   - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.3.0
   - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.4.1
   - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.5.0-rc0
+  global:
+  - secure: smvrfPnX8RTT/XGKmMTOZyhopy4ngODVqcVc0Wj5X6Ysj0Q6RAgXOsggCafV6C6dBy8iu/xw6oHZIa4+jj4sBxTH2LD42Bslmz3CisxWssnZw2YNHr25UYDtrsEBt4ZWA9gXGL71sJeWiZcEcfjWJJW10ObpUMi5AsQn45gVU8rP8CkDHPEWYz+ySb3bv9UxT2H6bqdERgr8KvW17q2YjwXHjIJDa4G5rhgNkRvZoPK0sbjNJF/IC3IMf9CC02BowPY9SRVEn50fmpwNRCUpF2vyF+SyO+/Mpo1oNHNvM8PIRz7JT/1yTCgn6xQ7zOvTUGDujPqRp64TDYu9V9Sh4HM4gmmG1sxJutGH077aPtmu5sxQsqeaiq3i+s46zujGMlCgUqt+tg9SvO5EA6amnPHvAX/q608oQ2kPQlFQKZ/TOeQmhbycNt5CTvFHKOZc4wfQ/OEUGCMtdJ3QVdJHqrLCimLdnJNucjIJRBMrbObAS6xm3jWA2BvNgPOJ69LlhF1wgCY8q2waDYtit1MtDnAs2yOKCAEiN7RLWUqfcdP6dADEzXnNH/fuQ+UeJBTzZuB0BQChOOlEoOSC3k+eE5cJH7mVhwP/rsfypIgaNBu+Iik2+MOkpm1fFCcTs5comBjP8GemXpj+sRZikPJBXo32XSc3Kw4xS+h1j9nNcbs=
+  - secure: qjmBZEBOGCjkySytNKHBLL5PPdrR3Gn/RXmqjBQUw61/FYX97WRmZA90WC91CED0hYCm8t1xVYhpSqCPgKHon5GssQjsPHDxQGQgmJRkub/vYUK1sI4TDa4KNOKM0HV2MYMHWC6Iu4aPVREfFu+QgdTfaxTQ+0Wna0I39iirBHZmK8kNpqLF7u33FAYx73R30c6HpzsE+NQ/qKfuZBU37l/uqfUB5pgaflv4ztagklD0w5qzPSANzHUo+1aKJbb7njvGrPy7hxXmPPs/Tg5rLWmL4czgojpk/ehV3Ql4/E4LIxNAbdM6KUTpqvJjYDTvOJ3Wp9asvHD+/cvRhXNdRAMtvObRNlwX0Zt9TsZDfOogH9u2Zk3Ls5OtBbC/LS5fscxsT97T+8XuTpCcyCjCzdxqTlquOcHPLnZwuyqH9L34byjG1TSc0XfgjylLDCpk9vhkEuWXHmot4g/vX2LWRNnZ0tS+jBNxUDNPo7BSpswFojHUfWDdoBVjNYOyWvJ8rxztgXpLmzcJb/8jIWDpD3un42a0Q4ae5xA+TQUaeW+bF8s/fbi4pXuG4TabK+yfQ4Kw7t5TZcMCafPkWf37Cho2kyVTFqSn+sOaIJR4CI/J+iNqyg3oIRThvmD6mmMJP5kvFbBYqgrWeZbni8Crl5IKhG1TUrTAqNb4BR9tPrc=
+  - secure: b4ki6cwUi7pZuuj8fXxQe9Odm/eDfOo9QxVdM3acB0q8ck/DDt06hEpBrATsEVT7r7VEZ9Pa4hoAwwqRFAS21n4SREV/vfYP/1GApgd3gR/PbL23FprVUsz+mBq/3PBu3vGLvjzWrMrBSh0jBYCjVCmAHclANK9VyU/gZD18P/H7bZypZwCcsaShqYR7T9Ui4TpdwfiKLTmOSjhEmuHfg269bMnOX+ikrdOvkr4o2mBKLq/AgCLoiOOTigLUZuKi5Gv5vm5Z4wM/dbkVelOgwQ5OCj87NrMRE+YQTpYUTPVtUUyQxpCF3IRa9a2dbq8M5Kk+NgNYJXkaOTxJ7BtjWDnlcI9RT7o+nNAgUmBClSZdSjMMmnDGOXaOWyaegGf2otohv1syIYwT06HZCVx36JyFvrozQNjeYgK99id2HvDjmSkI1yV5A8cE+crSJv5FteLhb6VM6gnWoAd6qyuPNVzPLjftoqEObRCd+uDCuOTD0olfcFt1jZ/h2e5RwwnrbdgVB/j3j6uiIT01y+/Kz/TtcdQgKS4yW+5nTGlyKJz1ONrh7za5zJnXWzM6O+KdW1zidooQwl+xT01IxF673L5lALvBZTfx3D4hqGa+zOb2bdz3ykw/3usXscmu4kv+g0R0O7K9s3qvVaeW9wG77cfUei3QC5+0HK9IBHxWEbI=
 install:
-  - docker build -t "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}" py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}
+- export TAG="ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}"
+- docker build -t "${TAG}" "${TAG}"
 script:
-  - docker run
-      -v "$(pwd)":"$(pwd)"
-      -w "$(pwd)"
-      -e PYTHON_VERSION="${PYTHON_VERSION}"
-      -e TENSORFLOW_VERSION="${TENSORFLOW_VERSION}"
-      "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}"
-      python tests.py
+- docker run
+    -v "$(pwd)":"$(pwd)"
+    -w "$(pwd)"
+    -e PYTHON_VERSION="${PYTHON_VERSION}"
+    -e TENSORFLOW_VERSION="${TENSORFLOW_VERSION}"
+    "${TAG}"
+    python tests.py
+after_success:
+  - docker login -e "${DOCKER_EMAIL}" -u "${DOCKER_USER}" -p "${DOCKER_PASS}"
+  - docker push "${TAG}"
