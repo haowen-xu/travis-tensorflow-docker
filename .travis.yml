@@ -1,23 +1,23 @@
 sudo: required
 services:
   - docker
-python:
-  - "2.7"
-  - "3.5"
-  - "3.6"
 env:
   matrix:
-  - TENSORFLOW_VERSION=1.2.1
-  - TENSORFLOW_VERSION=1.3.0
-  - TENSORFLOW_VERSION=1.4.1
-  - TENSORFLOW_VERSION=1.5.0-rc0
+  - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.2.1
+  - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.3.0
+  - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.4.1
+  - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.5.0-rc0
+  - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.2.1
+  - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.3.0
+  - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.4.1
+  - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.5.0-rc0
 install:
-  - docker build -t "ipwx/travis-tensorflow-docker:py${TRAVIS_PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}" py${TRAVIS_PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}
+  - docker build -t "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}" py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}
 script:
   - docker run \
       -v "$(pwd)":"$(pwd)" \
       -w "$(pwd)" \
-      -e TRAVIS_PYTHON_VERSION="${TRAVIS_PYTHON_VERSION}" \
+      -e PYTHON_VERSION="${PYTHON_VERSION}" \
       -e TENSORFLOW_VERSION="${TENSORFLOW_VERSION}" \
-      "ipwx/travis-tensorflow-docker:py${TRAVIS_PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}" \
+      "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}" \
       python tests.py

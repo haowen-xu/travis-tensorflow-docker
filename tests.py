@@ -11,7 +11,7 @@ class VersionTestCases(unittest.TestCase):
     def test_python_version(self):
         import sys
         self.assertEqual('{}.{}'.format(*sys.version_info[:2]),
-                         os.environ['TRAVIS_PYTHON_VERSION'])
+                         os.environ['PYTHON_VERSION'])
 
 
 if __name__ == '__main__':
