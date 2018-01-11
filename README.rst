@@ -6,25 +6,25 @@ Docker Images for Running Tests with TensorFlow on Travis CI
 
 This is a Ubuntu 16.04 Docker image for running tests with various versions of Python and TensorFlow on `Travis CI <https://travis-ci.org>`_.
 
-+----------+--------+------------+
-| Tag      | Python | TensorFlow |
-+==========+========+============+
-| py2tf1.2 | 2.7    | 1.2.1      |
-+----------+--------+------------+
-| py2tf1.3 | 2.7    | 1.3.0      |
-+----------+--------+------------+
-| py2tf1.4 | 2.7    | 1.4.1      |
-+----------+--------+------------+
-| py2tf1.5 | 2.7    | 1.5.0rc0   |
-+----------+--------+------------+
-| py3tf1.2 | 3.6    | 1.2.1      |
-+----------+--------+------------+
-| py3tf1.3 | 3.6    | 1.3.0      |
-+----------+--------+------------+
-| py3tf1.4 | 3.6    | 1.4.1      |
-+----------+--------+------------+
-| py3tf1.5 | 3.6    | 1.5.0rc0   |
-+----------+--------+------------+
++----------+--------+------------+-------------------------------------------------------------------------------------------------+
+| Tag      | Python | TensorFlow | Status                                                                                          |
++==========+========+============+=================================================================================================+
+| py2tf1.2 | 2.7    | 1.2.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/1 |
++----------+--------+------------+-------------------------------------------------------------------------------------------------+
+| py2tf1.3 | 2.7    | 1.3.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/2 |
++----------+--------+------------+-------------------------------------------------------------------------------------------------+
+| py2tf1.4 | 2.7    | 1.4.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/3 |
++----------+--------+------------+-------------------------------------------------------------------------------------------------+
+| py2tf1.5 | 2.7    | 1.5.0rc0   | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/4 |
++----------+--------+------------+-------------------------------------------------------------------------------------------------+
+| py3tf1.2 | 3.6    | 1.2.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/5 |
++----------+--------+------------+-------------------------------------------------------------------------------------------------+
+| py3tf1.3 | 3.6    | 1.3.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/6 |
++----------+--------+------------+-------------------------------------------------------------------------------------------------+
+| py3tf1.4 | 3.6    | 1.4.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/7 |
++----------+--------+------------+-------------------------------------------------------------------------------------------------+
+| py3tf1.5 | 3.6    | 1.5.0rc0   | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/8 |
++----------+--------+------------+-------------------------------------------------------------------------------------------------+
 
 Packages
 --------
@@ -43,23 +43,21 @@ An example `.travis.yml`::
       - docker
     env:
       matrix:
-      - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.2.1
-      - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.3.0
-      - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.4.1
-      - PYTHON_VERSION=2.7 TENSORFLOW_VERSION=1.5.0-rc0
-      - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.2.1
-      - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.3.0
-      - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.4.1
-      - PYTHON_VERSION=3.6 TENSORFLOW_VERSION=1.5.0-rc0
+      - PYTHON_VERSION=2 TENSORFLOW_VERSION=1.2
+      - PYTHON_VERSION=2 TENSORFLOW_VERSION=1.3
+      - PYTHON_VERSION=2 TENSORFLOW_VERSION=1.4
+      - PYTHON_VERSION=2 TENSORFLOW_VERSION=1.5
+      - PYTHON_VERSION=3 TENSORFLOW_VERSION=1.2
+      - PYTHON_VERSION=3 TENSORFLOW_VERSION=1.3
+      - PYTHON_VERSION=3 TENSORFLOW_VERSION=1.4
+      - PYTHON_VERSION=3 TENSORFLOW_VERSION=1.5
     install:
-      - docker pull "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}"
+      - docker pull "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION}tf${TENSORFLOW_VERSION}"
     script:
       - docker run
           -v "$(pwd)":"$(pwd)"
           -w "$(pwd)"
-          -e PYTHON_VERSION="${PYTHON_VERSION}"
-          -e TENSORFLOW_VERSION="${TENSORFLOW_VERSION}"
-          "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION:0:1}tf${TENSORFLOW_VERSION:0:3}"
+          "ipwx/travis-tensorflow-docker:py${PYTHON_VERSION}tf${TENSORFLOW_VERSION}"
           bash -c "pip install -r requirements.txt && python -m unittest"
 
 Development
