@@ -23,7 +23,7 @@ RUN sed -i "s/archive.ubuntu.com/${UBUNTU_MIRROR}/g" /etc/apt/sources.list && \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh \
             -O /tmp/miniconda.sh \
             && \
     /bin/bash /tmp/miniconda.sh -b -p /miniconda && \
@@ -31,11 +31,11 @@ RUN sed -i "s/archive.ubuntu.com/${UBUNTU_MIRROR}/g" /etc/apt/sources.list && \
     conda config --set always_yes yes --set changeps1 no && \
     conda update --yes -q conda && \
     conda info -a && \
-    conda install --yes -q python=3.6 && \
+    conda install --yes -q python=2.7 && \
     python -m pip install --ignore-installed --upgrade setuptools && \
     python -m pip install --upgrade pip && \
     python -m pip install --upgrade numpy six coverage mock pytest sphinx matplotlib pillow "coveralls>=1.1" && \
-    python -m pip install --upgrade "ipython[all]" && \
-    python -m pip install tensorflow==1.5.0
+    python -m pip install "ipython[all]<6" && \
+    python -m pip install tensorflow==1.6.0
 
 CMD ["/bin/bash"]
