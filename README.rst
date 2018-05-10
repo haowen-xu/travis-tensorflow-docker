@@ -29,6 +29,14 @@ This is a Ubuntu 16.04 Docker image for running tests with various versions of P
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
 | py3tf1.6 | 3.6    | 1.6.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/10 |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
+| py2tf1.7 | 2.7    | 1.7.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/10  |
++----------+--------+------------+--------------------------------------------------------------------------------------------------+
+| py3tf1.7 | 3.6    | 1.7.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/11 |
++----------+--------+------------+--------------------------------------------------------------------------------------------------+
+| py2tf1.8 | 2.7    | 1.8.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/12  |
++----------+--------+------------+--------------------------------------------------------------------------------------------------+
+| py3tf1.8 | 3.6    | 1.8.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/13 |
++----------+--------+------------+--------------------------------------------------------------------------------------------------+
 
 Packages
 --------
