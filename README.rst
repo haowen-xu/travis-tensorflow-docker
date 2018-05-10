@@ -11,31 +11,31 @@ This is a Ubuntu 16.04 Docker image for running tests with various versions of P
 +==========+========+============+==================================================================================================+
 | py2tf1.2 | 2.7    | 1.2.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/1  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.2 | 3.6    | 1.2.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/2  |
+| py3tf1.2 | 3.5    | 1.2.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/2  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
 | py2tf1.3 | 2.7    | 1.3.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/3  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.3 | 3.6    | 1.3.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/4  |
+| py3tf1.3 | 3.5    | 1.3.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/4  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
 | py2tf1.4 | 2.7    | 1.4.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/5  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.4 | 3.6    | 1.4.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/6  |
+| py3tf1.4 | 3.5    | 1.4.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/6  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
 | py2tf1.5 | 2.7    | 1.5.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/7  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.5 | 3.6    | 1.5.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/8  |
+| py3tf1.5 | 3.5    | 1.5.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/8  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
 | py2tf1.6 | 2.7    | 1.6.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/9  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.6 | 3.6    | 1.6.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/10 |
+| py3tf1.6 | 3.5    | 1.6.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/10 |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
 | py2tf1.7 | 2.7    | 1.7.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/10  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.7 | 3.6    | 1.7.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/11 |
+| py3tf1.7 | 3.5    | 1.7.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/11 |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
 | py2tf1.8 | 2.7    | 1.8.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/12  |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.8 | 3.6    | 1.8.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/13 |
+| py3tf1.8 | 3.5    | 1.8.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/korepwx/tfsnippet/branches/master/13 |
 +----------+--------+------------+--------------------------------------------------------------------------------------------------+
 
 Packages

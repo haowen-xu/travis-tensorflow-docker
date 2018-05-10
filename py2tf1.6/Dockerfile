@@ -5,7 +5,7 @@ MAINTAINER Haowen Xu <public@korepwx.com>
 ARG UBUNTU_MIRROR=archive.ubuntu.com
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
-ENV PATH="/miniconda/bin:${PATH}"
+ENV PATH="${PATH}"
 ENV SHELL=/bin/bash
 
 
@@ -20,20 +20,15 @@ RUN sed -i "s/archive.ubuntu.com/${UBUNTU_MIRROR}/g" /etc/apt/sources.list && \
         git \
         locales \
         language-pack-en \
+        python python-dev python-pip \
     && \
+    ln -sf /usr/bin/python3 /usr/bin/python && \
+    ln -sf /usr/bin/pip3 /usr/bin/pip
+    
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh \
-            -O /tmp/miniconda.sh \
-            && \
-    /bin/bash /tmp/miniconda.sh -b -p /miniconda && \
-    rm /tmp/miniconda.sh && \
-    conda config --set always_yes yes --set changeps1 no && \
-    conda update --yes -q conda && \
-    conda info -a && \
-    conda install --yes -q python=2.7 && \
     python -m pip install --upgrade pip setuptools && \
-    python -m pip install numpy coverage mock pytest sphinx matplotlib pillow "coveralls>=1.1" && \
+    python -m pip install --upgrade numpy coverage mock pytest sphinx matplotlib pillow "coveralls>=1.1" && \
     python -m pip install "ipython[all]<6" && \
     python -m pip install tensorflow==1.6.0
 
