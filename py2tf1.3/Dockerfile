@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Haowen Xu <public@korepwx.com>
+MAINTAINER Haowen Xu <haowen.xu@outlook.com>
 
 ARG UBUNTU_MIRROR=archive.ubuntu.com
 ENV LANG=en_US.UTF-8
