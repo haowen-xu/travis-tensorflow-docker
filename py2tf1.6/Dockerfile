@@ -22,9 +22,6 @@ RUN sed -i "s/archive.ubuntu.com/${UBUNTU_MIRROR}/g" /etc/apt/sources.list && \
         language-pack-en \
         python python-dev python-pip \
     && \
-    ln -sf /usr/bin/python3 /usr/bin/python && \
-    ln -sf /usr/bin/pip3 /usr/bin/pip
-    
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     python -m pip install --upgrade pip setuptools && \
