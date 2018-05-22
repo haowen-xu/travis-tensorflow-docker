@@ -6,44 +6,18 @@ Docker Images for Running Tests with TensorFlow on Travis CI
 
 This is a Ubuntu 16.04 Docker image for running tests with various versions of Python and TensorFlow on `Travis CI <https://travis-ci.org>`_.
 
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| Tag      | Python | TensorFlow | Status                                                                                           |
-+==========+========+============+==================================================================================================+
-| py2tf1.2 | 2.7    | 1.2.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/1  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.2 | 3.5    | 1.2.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/2  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py2tf1.3 | 2.7    | 1.3.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/3  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.3 | 3.5    | 1.3.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/4  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py2tf1.4 | 2.7    | 1.4.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/5  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.4 | 3.5    | 1.4.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/6  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py2tf1.5 | 2.7    | 1.5.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/7  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.5 | 3.5    | 1.5.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/8  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py2tf1.6 | 2.7    | 1.6.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/9  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.6 | 3.5    | 1.6.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/10 |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py2tf1.7 | 2.7    | 1.7.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/10  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.7 | 3.5    | 1.7.1      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/11 |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py2tf1.8 | 2.7    | 1.8.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/12  |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-| py3tf1.8 | 3.5    | 1.8.0      | .. image:: https://travis-matrix-badges.herokuapp.com/repos/haowen-xu/tfsnippet/branches/master/13 |
-+----------+--------+------------+--------------------------------------------------------------------------------------------------+
-
 Packages
 --------
 
 * Ubuntu 16.04
 * Apt: build-essential, wget, git
 * Python: numpy, six, coverage, mock, pytest, sphinx, matplotlib, pillow, ipython[all]
+
+Supported Versions
+------------------
+
+* Python: 2.7, 3.5
+* TensorFlow: 1.2.1, 1.3.0, 1.4.1, 1.5.0, 1.6.0, 1.7.1, 1.8.0
 
 Usage
 -----
@@ -57,12 +31,8 @@ An example `.travis.yml`::
       matrix:
       - PYTHON_VERSION=2 TENSORFLOW_VERSION=1.2
       - PYTHON_VERSION=3 TENSORFLOW_VERSION=1.2
-      - PYTHON_VERSION=2 TENSORFLOW_VERSION=1.3
-      - PYTHON_VERSION=3 TENSORFLOW_VERSION=1.3
-      - PYTHON_VERSION=2 TENSORFLOW_VERSION=1.4
-      - PYTHON_VERSION=3 TENSORFLOW_VERSION=1.4
-      - PYTHON_VERSION=2 TENSORFLOW_VERSION=1.5
-      - PYTHON_VERSION=3 TENSORFLOW_VERSION=1.5
+      - PYTHON_VERSION=2 TENSORFLOW_VERSION=1.8
+      - PYTHON_VERSION=3 TENSORFLOW_VERSION=1.8
     install:
       - docker pull "haowenxu/travis-tensorflow-docker:py${PYTHON_VERSION}tf${TENSORFLOW_VERSION}"
     script:
