@@ -4,22 +4,17 @@ Docker Images for Running Tests with TensorFlow on Travis CI
 .. image:: https://travis-ci.org/haowen-xu/travis-tensorflow-docker.svg?branch=master
     :target: https://travis-ci.org/haowen-xu/travis-tensorflow-docker
 
-This is a Ubuntu 16.04 Docker image for running tests with various versions of Python and TensorFlow on `Travis CI <https://travis-ci.org>`_.
+This is a Ubuntu Docker image for running tests with various versions of Python and TensorFlow on `Travis CI <https://travis-ci.org>`_.
 
-Packages
+Versions
 --------
 
-* Ubuntu 16.04
-* Apt: build-essential, wget, git
-* Python: numpy, six, coverage, mock, pytest, sphinx, matplotlib, pillow, ipython[all]
+Built versions are:
 
-Supported Versions
-------------------
+* Ubuntu 16.04 + Python 2.7 / 3.5 + TensorFlow 1.3 ~ 1.8
+* Ubuntu 18.04 + Python 2.7 / 3.6 + TensorFlow 1.9 ~ 1.12
 
-* Python: 2.7, 3.6
-* TensorFlow: 
-  * Historical Version: 1.2.1, 1.3.0, 1.4.1, 1.5.0, 1.6.0, 1.7.1, 1.8.0
-  * Active Build Versions: 1.9.0, 1.10.0, 1.11.0, 1.12.0rc2
+All the available tags can be retrieved at `Docker Hub <https://hub.docker.com/r/haowenxu/travis-tensorflow-docker/tags/>`_.
 
 Usage
 -----
