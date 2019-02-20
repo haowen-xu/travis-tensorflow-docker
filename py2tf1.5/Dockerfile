@@ -20,15 +20,13 @@ RUN sed -i "s/archive.ubuntu.com/${UBUNTU_MIRROR}/g" /etc/apt/sources.list && \
         git \
         locales \
         language-pack-en \
-        python3 python3-dev python3-pip \
+        python python-dev python-pip \
     && \
-    ln -sf /usr/bin/python3 /usr/bin/python && \
-    ln -sf /usr/bin/pip3 /usr/bin/pip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     python -m pip install --upgrade pip setuptools && \
     python -m pip install --upgrade numpy coverage mock pytest sphinx matplotlib pillow "coveralls>=1.1" && \
-    python -m pip install --upgrade "ipython[all]" && \
-    python -m pip install tensorflow==1.9.0
+    python -m pip install "ipython[all]<6" && \
+    python -m pip install tensorflow==1.5.0
 
 CMD ["/bin/bash"]
