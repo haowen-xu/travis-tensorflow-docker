@@ -29,6 +29,6 @@ RUN sed -i "s/archive.ubuntu.com/${UBUNTU_MIRROR}/g" /etc/apt/sources.list && \
     python -m pip install --upgrade pip setuptools && \
     python -m pip install --upgrade numpy coverage mock pytest sphinx matplotlib pillow "coveralls>=1.1" && \
     python -m pip install --upgrade "ipython[all]" && \
-    python -m pip install tensorflow==1.12.0rc2
+    python -m pip install tensorflow==1.12.0
 
 CMD ["/bin/bash"]
